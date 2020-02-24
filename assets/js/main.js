@@ -43,7 +43,7 @@ const renderNews = data => {
 		post.innerHTML = `
     <div class="news">
             <div class="news-image">
-                <img src="/assets/img/unnamed.jpg" alt="news">
+                <img src="./assets/img/unnamed.jpg" alt="news">
             </div>
             <div class="news-content">
                 <a href="article/?id=${
