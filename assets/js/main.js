@@ -1,14 +1,14 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', () => getAllNews(start));
-let start = 1;
-let navigation = document.getElementById('navigation');
-let newsContainer = document.getElementById('news-container');
-let currentNewsArray = [];
+let start = 1,
+	navigation = document.getElementById('navigation'),
+	newsContainer = document.getElementById('news-container'),
+	currentNewsArray = [];
 
 const createListner = () => {
-	var modal = document.getElementById('myModal');
+	let modal = document.getElementById('myModal'),
+		span = document.getElementsByClassName('close')[0];
 	modal.style.display = 'block';
-	var span = document.getElementsByClassName('close')[0];
 
 	span.onclick = function() {
 		modal.style.display = 'none';
@@ -27,7 +27,7 @@ const getAllNews = () => {
 			if (!res.length) {
 				start -= 1;
 				getAllNews(start);
-				return Notify.error('No More News Found');
+				return Notify.info('No More News Found');
 			}
 			currentNewsArray = res;
 			return renderNews(res);
@@ -72,10 +72,9 @@ const editListner = (index, newsId) => {
 		updateButton = document.getElementById('update'),
 		editAuthor = document.getElementById('edit-author'),
 		editTitle = document.getElementById('edit-title'),
-		addImage = document.getElementById('add-image');
+		addImage = document.getElementById('add-image'),
+		span = document.getElementsByClassName('close')[1];
 	modal.style.display = 'block';
-
-	let span = document.getElementsByClassName('close')[1];
 	editAuthor.value = currentNewsArray[index].author;
 	editTitle.value = currentNewsArray[index].title;
 

@@ -1,6 +1,6 @@
-let params = getParams(window.location);
-let commentStart = 1;
-let comments = [];
+let params = getParams(window.location),
+	commentStart = 1,
+	comments = [];
 document.addEventListener('DOMContentLoaded', () => getNews());
 
 const getNews = () => {
@@ -33,8 +33,8 @@ const getImages = id => {
 };
 
 const renderSlider = data => {
-	const sliderContainer = document.getElementById('slideshow-container');
-	let image = '';
+	let sliderContainer = document.getElementById('slideshow-container'),
+		image = '';
 	data.forEach((item, index) => {
 		image += `
        <div class="mySlides fade">
@@ -77,7 +77,7 @@ const getAllComments = () => {
 	Api.getAllComments(params.id, commentStart, 10)
 		.then(res => {
 			if (!res.length && commentStart > 1) {
-				return Notify.error('No Comments Found', getAllComments);
+				return Notify.info('No Comments Found');
 			}
 			comments = [...comments, ...res];
 			return;
@@ -107,7 +107,7 @@ renderComments = () => {
 		<div>
 			<button style="color:green;" id="edit_${
 				item.id
-			}" onclick="modalListner(${index},${item.id})">Edit</button>
+			}" onclick="editListner(${index},${item.id})">Edit</button>
 			<button style="color:red" id="delete_${item.id}" onclick="deleteComment(${
 			item.newsId
 		},${item.id})">Delete</button>
@@ -117,14 +117,14 @@ renderComments = () => {
 		commentBody.append(commentItem);
 	});
 };
-const modalListner = (index, commentId) => {
+const editListner = (index, commentId) => {
 	let modal = document.getElementById('myModal'),
 		updateButton = document.getElementById('update'),
 		modalAuthor = document.getElementById('modal-author'),
-		modalComment = document.getElementById('modal-comment');
-	modal.style.display = 'block';
+		modalComment = document.getElementById('modal-comment'),
+		span = document.getElementsByClassName('close')[0];
 
-	let span = document.getElementsByClassName('close')[0];
+	modal.style.display = 'block';
 	modalAuthor.value = comments[index].name;
 	modalComment.value = comments[index].comment;
 
