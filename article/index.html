@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/slider.css">
+    <link rel="stylesheet" href="/assets/css/modal.css" />
+
+    <title>Mocks News</title>
+</head>
+
+<body class="body">
+    <nav>
+        <div class="nav">
+            <a href="/">
+                <img src="/assets/img/icon.png" alt="logo" class="logo">
+            </a>
+        </div>
+    </nav>
+    <div class="notification" id=notification>
+        <p id="note"></p>
+        <!-- <button id="retry">Retry</button> -->
+        <span id="note-close" onclick="closeNotification()">x</span>
+    </div>
+    <section id="content" class="content">
+        <div>
+            <div style="margin-bottom: 100px">
+                <div class="content-title" id="content-title">
+                </div>
+
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, repudiandae quos inventore dolore
+                    repellat ratione et reiciendis nemo vero molestiae a molestias deleniti eaque iusto officiis
+                    laboriosam ducimus! Sed, excepturi!
+                    Voluptates quod dolor molestias distinctio ratione fugiat quae corrupti, nulla iure accusantium
+                    aliquam consectetur impedit incidunt eligendi consequatur. Eum aperiam sunt, id dicta quisquam illum
+                    architecto ducimus eaque aliquam minus.
+                    Minus eum quos animi vel odit illo ipsum modi nesciunt similique repellat nostrum voluptate adipisci
+                    fugiat, nisi aliquid ipsa, cum maiores veritatis officiis itaque recusandae quibusdam. Non provident
+                    hic natus!
+                    Totam aliquid nam libero. Neque, voluptas, eius nulla eos doloribus tempore reiciendis sed
+                    laudantium est excepturi itaque nemo, laboriosam fugiat natus consequuntur provident! Eius aperiam
+                    magni ullam expedita qui minima!
+                    Id qui perspiciatis doloremque quidem repudiandae nihil non laborum nesciunt, maxime nam? Facilis,
+                    veritatis perferendis. Laborum, iusto voluptates optio sint amet explicabo iste veritatis illo
+                    voluptatem necessitatibus, fugit, tempore suscipit?</p>
+            </div>
+            <div class="slideshow-container">
+                <div id="slideshow-container">
+                    <div class="loader-container">
+                        <div class="loader"></div>
+                    </div>
+
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div class="content-comment" style="margin-top: 100px">
+                <div class="comment-add">
+                    <div class="comment-avatar">
+                        <img src="https://res.cloudinary.com/harkindey/image/upload/v1582486831/1065-IMG_2529_yjussx.jpg"
+                            alt="avatar">
+                    </div>
+                    <div class="comment-form">
+                        <div class="comment-input">
+                            <label htmlFor="author">Author</label>
+                            <input type="text" class="comment-author" id="author">
+                        </div>
+                        <div class="comment-input">
+                            <label htmlFor="comment">Comment</label>
+                            <textarea type="text" class="comment-text" name="comment" id="comment-id"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="color:red" id="error"></p>
+                        <button class="button" onclick="addComment()" style="margin-top: 20px">Add Comment+</button>
+                    </div>
+                </div>
+                <div>
+                    <p id="loaded-comment"></p>
+                    <div id="comment-body">
+                    </div>
+
+                </div>
+                <div class="comment-action">
+                    <button class="button" onclick="LoadMoreComment()">Load More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h1>Edit Comment</h1>
+            </div>
+            <div class="modal-body">
+                <div class="comment-form">
+                    <div class="comment-input">
+                        <label htmlFor="modal-author">Author</label>
+                        <input type="text" class="comment-author" id="modal-author">
+                    </div>
+                    <div class="comment-input">
+                        <label htmlFor="modal-comment">Comment</label>
+                        <textarea type="text" class="comment-text" name="comment" id="modal-comment"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p style="color:red" id="modal-error"></p>
+                <div class="form-action">
+                    <button class="button" id="update">Update +</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/utils.js"></script>
+    <script src="/assets/js/slider.js"></script>
+    <script src="/assets/js/article.js"></script>
+</body>
+
+</html>

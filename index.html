@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/modal.css" />
+
+    <title>Mocks News</title>
+</head>
+
+<body class="body">
+    <nav>
+        <div class="nav">
+            <a href="/">
+                <img src="assets/img/icon.png" alt="logo" class="logo" />
+            </a>
+            <div class="cta">
+                <button class="button" id="myBtn" onclick="createListner()">Create News</button>
+            </div>
+        </div>
+    </nav>
+    <div class="notification" id=notification>
+        <p id="note"></p>
+        <!-- <button id="retry">Retry</button> -->
+        <span id="note-close" onclick="closeNotification()">x</span>
+    </div>
+    <section>
+        <div id="news-container">
+            <div class="loader-container">
+                <div class="loader"></div>
+            </div>
+        </div>
+        <div class="navigation" id="navigation">
+            <button class="btn btn-2" onclick="loadNext()">
+                Next &rarr;
+            </button>
+        </div>
+    </section>
+
+    <!-- The Create Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h1>Create News</h1>
+            </div>
+            <div class="modal-body">
+                <div class="form">
+                    <div class="form-input">
+                        <label htmlFor="title">Title</label>
+                        <input type="text" id="title" />
+                    </div>
+                    <div class="form-input">
+                        <label htmlFor="title">Author</label>
+                        <input type="text" id="author" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p style="color:red" id="error"></p>
+                <div class="form-action">
+                    <button class="button" onclick="createNews()">Create +</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Edit Modal -->
+    <div id="myEditModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h1>Edit News</h1>
+            </div>
+            <div class="modal-body">
+                <div class="form">
+                    <div class="form-input">
+                        <label htmlFor="title">Title</label>
+                        <input type="text" id="edit-title" />
+                    </div>
+                    <div class="form-input">
+                        <label htmlFor="title">Author</label>
+                        <input type="text" id="edit-author" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p style="color:red" id="edit-error"></p>
+                <div class="form-action">
+                    <button class="button" id="add-image" style="margin-bottom: 10px;">Add Random Image + </button>
+                    <button class="button" id="update">Update +</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/utils.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
