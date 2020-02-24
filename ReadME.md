@@ -2,7 +2,7 @@
 
 Deployed at [MockNews](https://harkindey.github.io/MockNews/).
 
-# Setup
+### Setup
 
 -   Install `live-server` globally and run it in root of project.
 
